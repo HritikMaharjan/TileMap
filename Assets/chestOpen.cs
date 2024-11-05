@@ -16,11 +16,15 @@ public class chestOpen : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
+            Debug.Log("Touch");
             boxAnimation.SetBool("openBox", true);
             Invoke("endGame", 1f);
 
         }
+    }
+
+    public void endGame() {
+        gameManager.isAllCollected();
     }
 
     
